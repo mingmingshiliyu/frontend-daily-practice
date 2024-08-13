@@ -7,6 +7,10 @@ import Navbar from './components/Navbar'
 import { UpdateFollower } from 'react-mouse-follower';
 import Hero from './components/Hero'
 import Service from "./components/Service"
+import Banner from './components/Banner'
+import BannerText from "./components/BannerText"
+import Blog from './components/Blog'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -26,6 +30,10 @@ function App() {
       <Navbar/>
       <Hero/>
       <Service/>
+      <Banner/>
+      <BannerText/>
+      <Blog/>
+      <Footer/>
     </UpdateFollower>
     </header>
     </div>
