@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    /* flex布局时，子元素定义width和height不生效，因为子元素自动获得flex-shrink属性：告诉子元素当父元素宽度不够用时，自己调整自己所占的宽度比，这个flex-shrink设置为1时，表示所有子元素大家同时缩小来适应总宽度。当flex-shrink设置为0时，表示大家都不缩小适应 */
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    flex-direction: column; 
+    /* gap: 30px; */
+    /* & 例如ol>li表示ol中所有li元素遍历，*表示通配符 &表示.container */
+    & > * {
+        font-size: 30px;
+        font-family: sans-serif;
+        padding: 10px;
+        color: white;
+    }
+
+    .header {
+        width: 100%;
+        text-align: center;
+        background-color: brown;
+        color: white;
+    font-size: 30px;
+    font-family: sans-serif;
+    padding: 10px;
+    }
+
+    .items-box{
+        display: flex;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .maincontent{
+        background-color: yellow;
+        width: 100%;
+        flex: 1;
+    }
+
+    .body-item{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+        /* 高度设置并没有生效，说明仍然是默认值auto，父元素auto，子元素设置100%不生效，除非改变position为absolute */
+        height: 199000px; 
+        flex-shrink: 0;
+        flex:1; 
+        display:-webkit-flex;
+        /* align-items:stretch; */
+    }
+
+.item {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    height: 100px;
+    flex: 1; 
+    /* Ensure items stretch to fill available space */
+}
+
+    .main-area {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 3;
+    }
+
+    .sidebar{
+        width: 30%;
+        /* height: 100%; */
+        /* 子元素height和width不生效，设置flex-shrink确实有效了，但对于100%还是不行 */
+        flex-shrink: 0;
+        /* position:; */
+    }
+
+    .n1{
+        background-color: blue;
+    }
+    .n2{
+        background-color: blue;
+    }
+    .n3{
+        background-color: blue;
+    }
+
+    .sidebar{
+        background-color: aqua;
+    }
+   
+
+    .footer{
+        width: 100%;
+        text-align: center;
+        background-color: orangered;
+    }
+
+}
